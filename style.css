@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --green: #d7f0e2;
+  --white: #fff;
+  --grey: grey;
+  --blue: #3423a6;
+}
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--blue);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color: var(--green);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navigation.active {
+  width: 60px;
+}
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 200%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover {
+  background-color: var(--blue);
+  transition: 0.3s ease-in;
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  font-size: 25px;
+  pointer-events: none;
+  transition: 0.5s ease-in;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.navigation ul li:hover a {
+  color: var(--white);
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.navigation ul li .name {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* main */
+main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  transition: 0.5s ease;
+}
+main.active {
+  width: calc(100% - 80px);
+  left: 60px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 15px;
+}
+
+/* menu */
+.breadcrumb {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  font-size: 50px;
+  color: var(--green);
+  cursor: pointer;
+}
+
+/* Search bar */
+.search {
+  position: relative;
+  width: 500px;
+  margin: 0 15px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+.search label input {
+  border-radius: 40px;
+  border: 1px solid var(--green);
+  outline: none;
+  width: 100%;
+  height: 45px;
+  padding: 6px 35px;
+  font-size: 15px;
+}
+
+.search label ion-icon {
+  position: absolute;
+  left: 10px;
+  height: 45px;
+  color: var(--blue);
+  font-size: 20px;
+}
+
+/* user image */
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cards */
+.cardWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  width: 100%;
+  padding: 20px;
+}
+
+.cardWrapper .cards {
+  position: relative;
+  background-color: var(--white);
+  box-shadow: 0 3px 10px rgb(0, 0, 0, 0.15);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.cardWrapper .cards .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 40px;
+  color: var(--blue);
+}
+
+.cardWrapper .cards .cardName {
+  position: relative;
+  font-size: 20px;
+  margin-top: 5px;
+  color: var(--grey);
+}
+
+.cardWrapper .cards .iconWrapper {
+  position: relative;
+  font-size: 50px;
+  color: var(--grey);
+}
+
+.cardWrapper .cards:hover {
+  background-color: var(--green);
+}
+
+/* sales details */
+.sales {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+}
+
+.sales .recentOrders {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  padding: 20px;
+  display: grid;
+  background-color: var(--white);
+  box-shadow: 0 3px 10px rgb(0, 0, 0, 0.15);
+  border-radius: 20px;
+}
+
+.cardHeader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  margin-right: 25px;
+  padding: 5px 10px;
+  background-color: var(--blue);
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--green);
+}
+
+.btn:hover {
+  background-color: var(--green);
+  color: var(--blue);
+  transition: 0.5s;
+}
+.cardHeader h2 {
+  color: var(--blue);
+}
+
+.sales table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+.sales table thead td {
+  font-weight: bold;
+}
+
+.sales .recentOrders table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.sales .recentOrders table tr td {
+  padding: 10px;
+}
+.sales .recentOrders table tr:last-child {
+  border-bottom: none;
+}
+.sales .recentOrders tbody tr:hover {
+  background-color: var(--blue);
+  color: var(--green);
+  transition: 0.3s;
+}
+.sales .recentOrders table tr td:last-child {
+  text-align: end;
+}
+
+.sales .recentOrders table tr td:nth-child(3) {
+  text-align: center;
+}
+
+.status.delivered {
+  background-color: #6067a1;
+  color: var(--green);
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 4px 4px;
+}
+
+.status.pending {
+  background-color: #61e786;
+  color: var(--blue);
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 4px 4px;
+}
+
+.status.inprogress {
+  background-color: #480355;
+  color: var(--white);
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 4px 4px;
+}
+
+.status.return {
+  background-color: red;
+  color: var(--white);
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 4px 4px;
+}
+
+.sales .newCustomers {
+  position: relative;
+  display: grid;
+  width: 100%;
+  min-height: 500px;
+  padding: 20px;
+  background-color: var(--white);
+  box-shadow: 0 3px 10px rgb(0, 0, 0, 0.15);
+  border-radius: 20px;
+}
+
+.newCustomers .imgWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.imgWrapper img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newCustomers table tr:hover {
+  background-color: var(--blue);
+  color: var(--green);
+  transition: 0.3s;
+}
+
+.newCustomers table tr td {
+  padding: 12px 10px;
+}
+
+.newCustomers table tr td h4 {
+  line-height: 25px;
+  font-size: 15px;
+}
+
+.newCustomers table tr td h4 span {
+  font-size: 10px;
+  color: var(--grey);
+}
+
+.newCustomers table tr:hover td h4 span {
+  color: var(--white);
+}
+
+/* responsivness */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  main {
+    width: 100%;
+    left: 0;
+  }
+  main.active {
+    left: 300px;
+  }
+  .cardWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .status.inprogress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .sales {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inprogress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardWrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .breadcrumb {
+    z-index: 10001;
+    /* color: var(--grey); */
+  }
+  main.active .breadcrumb {
+    position: fixed;
+    color: var(--blue);
+  }
+}
