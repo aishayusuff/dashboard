@@ -15,6 +15,12 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
       defer
     ></script>
+    <script
+      src="
+    https://cdn.jsdelivr.net/npm/chart.js@4.3.3/dist/chart.umd.min.js
+    "
+      defer
+    ></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -151,10 +157,24 @@
           </div>
         </div>
 
+        <!-- graph and chart section -->
+        <div class="chartWrapper">
+          <div class="chart">
+            <div>
+              <canvas id="doughnut"></canvas>
+            </div>
+          </div>
+          <div class="chart">
+            <div>
+              <canvas id="graph"></canvas>
+            </div>
+          </div>
+        </div>
+
         <!-- Sales details section -->
         <div class="sales">
           <div class="recentOrders">
-            <div class="cardHeader">
+            <div class="salesHeader">
               <h2>Recent Orders</h2>
               <a href="#" class="btn">View all</a>
             </div>
@@ -228,7 +248,7 @@
             </table>
           </div>
 
-          <!-- New Customers -->
+          <!-- New Customers section -->
           <div class="newCustomers">
             <div class="cardHeader">
               <h2>New Customers</h2>
@@ -290,7 +310,5 @@
         </div>
       </main>
     </div>
-
-    <!-- For icons -ionicons -->
   </body>
 </html>
