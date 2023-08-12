@@ -312,6 +312,7 @@ main.active {
   border-radius: 5px;
   font-size: 13px;
   padding: 4px 4px;
+  white-space: nowrap;
 }
 
 .status.return {
@@ -403,9 +404,6 @@ main.active {
   .recentOrders {
     overflow-x: auto;
   }
-  .status.inprogress {
-    white-space: nowrap;
-  }
 }
 
 @media (max-width: 480px) {
@@ -429,7 +427,6 @@ main.active {
   }
   .breadcrumb {
     z-index: 10001;
-    /* color: var(--grey); */
   }
   main.active .breadcrumb {
     position: fixed;
